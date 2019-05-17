@@ -21,6 +21,12 @@ public class Waarneming {
     @Column(name = "soortwaarneming")
     private SoortWaarneming soortWaarneming;
 
+    @Column(name = "latitude")
+    private int lat;
+
+    @Column(name = "longitude")
+    private int lng;
+
     // Getters and setters
     public int getId() {
         return id;
@@ -50,22 +56,42 @@ public class Waarneming {
         this.soortWaarneming = soortWaarneming;
     }
 
+    public int getLat() {
+        return lat;
+    }
+
+    public void setLat(int lat) {
+        this.lat = lat;
+    }
+
+    public int getLng() {
+        return lng;
+    }
+
+    public void setLng(int lng) {
+        this.lng = lng;
+    }
+
     // Constructors
     public Waarneming() {
 
     }
 
-    public Waarneming(Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming) {
+    public Waarneming(Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming, int lat, int lng) {
         this.datumWaarneming = datumWaarneming;
         this.vogel = vogel;
         this.soortWaarneming = soortWaarneming;
+        this.lat = lat;
+        this.lng = lng;
     }
 
-    public Waarneming(int id, Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming) {
+    public Waarneming(int id, Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming, int lat, int lng) {
         this.id = id;
         this.datumWaarneming = datumWaarneming;
         this.vogel = vogel;
         this.soortWaarneming = soortWaarneming;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     // Methods

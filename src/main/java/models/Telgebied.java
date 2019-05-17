@@ -26,6 +26,18 @@ public class Telgebied {
     @Fetch(FetchMode.SELECT)
     private List<Bezoek> bezoeken = new ArrayList<>();
 
+    @Column(name = "southwest_lat")
+    private int southWestLat;
+
+    @Column(name = "southwest_lng")
+    private int southWestLng;
+
+    @Column(name = "northEast_lat")
+    private int northEastLat;
+
+    @Column(name = "northEast_lng")
+    private int northEastLng;
+
     // Getters and setters
     public int getId() {
         return id;
@@ -58,20 +70,61 @@ public class Telgebied {
         }
     }
 
+    public int getSouthWestLat() {
+        return southWestLat;
+    }
+
+    public void setSouthWestLat(int southWestLat) {
+        this.southWestLat = southWestLat;
+    }
+
+    public int getSouthWestLng() {
+        return southWestLng;
+    }
+
+    public void setSouthWestLng(int southWestLng) {
+        this.southWestLng = southWestLng;
+    }
+
+    public int getNorthEastLat() {
+        return northEastLat;
+    }
+
+    public void setNorthEastLat(int northEastLat) {
+        this.northEastLat = northEastLat;
+    }
+
+    public int getNorthEastLng() {
+        return northEastLng;
+    }
+
+    public void setNorthEastLng(int northEastLng) {
+        this.northEastLng = northEastLng;
+    }
+
+
     // Constructors
     public Telgebied() {
 
     }
 
-    public Telgebied(String naam, String kaart) {
+    public Telgebied(String naam, String kaart, int southWestLat, int southWestLng, int northEastLat, int northEastLng) {
         this.naam = naam;
         this.kaart = kaart;
+        this.southWestLat = southWestLat;
+        this.southWestLng = southWestLng;
+        this.northEastLat = northEastLat;
+        this.northEastLng = northEastLng;
     }
 
-    public Telgebied(int id, String naam, String kaart) {
+    public Telgebied(int id, String naam, String kaart, int southWestLat, int southWestLng, int northEastLat, int northEastLng) {
         this.id = id;
         this.naam = naam;
         this.kaart = kaart;
+        this.southWestLat = southWestLat;
+        this.southWestLng = southWestLng;
+        this.northEastLat = northEastLat;
+        this.northEastLng = northEastLng;
     }
 
     // Methods
