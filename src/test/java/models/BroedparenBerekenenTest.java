@@ -14,7 +14,7 @@ public class BroedparenBerekenenTest {
 
     @Before
     public void TestInitialize() {
-        telgebied = new Telgebied(1, "De Paarse Heide", "Groningen");
+        telgebied = new Telgebied(1, "De Paarse Heide", "Groningen", 34, 35, 50, 60);
         vogelteller = new Vogelteller(1, "John Doe", "jdoe", "1wachtwoord!");
 
         Date startBroedperiodeVogel1 = new GregorianCalendar(2019, Calendar.MARCH, 15).getTime();
@@ -32,11 +32,11 @@ public class BroedparenBerekenenTest {
     public void TestBerekenAantalBroedparen() {
         Date datumWaarneming1 = new GregorianCalendar(2019, Calendar.APRIL, 23).getTime();
         List<Waarneming> waarnemingen = new ArrayList<>();
-        waarnemingen.add(new Waarneming(1, datumWaarneming1, vogel1, SoortWaarneming.NestIndicerend));
-        waarnemingen.add(new Waarneming(2, datumWaarneming1, vogel1, SoortWaarneming.TerritoriumIndicerend));
-        waarnemingen.add(new Waarneming(3, datumWaarneming1, vogel2, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(4, datumWaarneming1, vogel1, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(5, datumWaarneming1, vogel2, SoortWaarneming.VogelAanwezig));
+        waarnemingen.add(new Waarneming(1, datumWaarneming1, vogel1, SoortWaarneming.NestIndicerend, 50));
+        waarnemingen.add(new Waarneming(2, datumWaarneming1, vogel1, SoortWaarneming.TerritoriumIndicerend, 50));
+        waarnemingen.add(new Waarneming(3, datumWaarneming1, vogel2, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(4, datumWaarneming1, vogel1, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(5, datumWaarneming1, vogel2, SoortWaarneming.VogelAanwezig,50));
         telgebied.addBezoek(new Bezoek(1, datumWaarneming1, datumWaarneming1, telgebied, vogelteller, waarnemingen));
 
         assertEquals(2, telgebied.BerekenAantalBroedparen(vogel1));
@@ -46,11 +46,11 @@ public class BroedparenBerekenenTest {
     public void TestAfrondingBerekenAantalBroedparen() {
         Date datumWaarneming = new GregorianCalendar(2019, Calendar.APRIL, 23).getTime();
         List<Waarneming> waarnemingen = new ArrayList<>();
-        waarnemingen.add(new Waarneming(1, datumWaarneming, vogel2, SoortWaarneming.NestIndicerend));
-        waarnemingen.add(new Waarneming(2, datumWaarneming, vogel1, SoortWaarneming.TerritoriumIndicerend));
-        waarnemingen.add(new Waarneming(3, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(4, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(5, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig));
+        waarnemingen.add(new Waarneming(1, datumWaarneming, vogel2, SoortWaarneming.NestIndicerend, 50));
+        waarnemingen.add(new Waarneming(2, datumWaarneming, vogel1, SoortWaarneming.TerritoriumIndicerend, 50));
+        waarnemingen.add(new Waarneming(3, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(4, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(5, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig, 50));
         telgebied.addBezoek(new Bezoek(1, datumWaarneming, datumWaarneming, telgebied, vogelteller, waarnemingen));
 
         assertEquals(1, telgebied.BerekenAantalBroedparen(vogel2));
@@ -60,11 +60,11 @@ public class BroedparenBerekenenTest {
     public void TestBerekenAantalBroedparenBuitenBroedperiode() {
         Date datumWaarneming = new GregorianCalendar(2019, Calendar.JANUARY, 22).getTime();
         List<Waarneming> waarnemingen = new ArrayList<>();
-        waarnemingen.add(new Waarneming(1, datumWaarneming, vogel2, SoortWaarneming.NestIndicerend));
-        waarnemingen.add(new Waarneming(2, datumWaarneming, vogel1, SoortWaarneming.TerritoriumIndicerend));
-        waarnemingen.add(new Waarneming(3, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(4, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(5, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig));
+        waarnemingen.add(new Waarneming(1, datumWaarneming, vogel2, SoortWaarneming.NestIndicerend, 50));
+        waarnemingen.add(new Waarneming(2, datumWaarneming, vogel1, SoortWaarneming.TerritoriumIndicerend, 50));
+        waarnemingen.add(new Waarneming(3, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(4, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(5, datumWaarneming, vogel2, SoortWaarneming.VogelAanwezig, 50));
         telgebied.addBezoek(new Bezoek(1, datumWaarneming, datumWaarneming, telgebied, vogelteller, waarnemingen));
 
         assertEquals(0, telgebied.BerekenAantalBroedparen(vogel1));
@@ -74,11 +74,11 @@ public class BroedparenBerekenenTest {
     public void TestBerekenAantalBroedparenMetGeenWaarnemingen() {
         Date datumWaarneming = new GregorianCalendar(2019, Calendar.APRIL, 23).getTime();
         List<Waarneming> waarnemingen = new ArrayList<>();
-        waarnemingen.add(new Waarneming(1, datumWaarneming, vogel1, SoortWaarneming.NestIndicerend));
-        waarnemingen.add(new Waarneming(2, datumWaarneming, vogel1, SoortWaarneming.TerritoriumIndicerend));
-        waarnemingen.add(new Waarneming(3, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(4, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig));
-        waarnemingen.add(new Waarneming(5, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig));
+        waarnemingen.add(new Waarneming(1, datumWaarneming, vogel1, SoortWaarneming.NestIndicerend, 50));
+        waarnemingen.add(new Waarneming(2, datumWaarneming, vogel1, SoortWaarneming.TerritoriumIndicerend, 50));
+        waarnemingen.add(new Waarneming(3, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(4, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig, 50));
+        waarnemingen.add(new Waarneming(5, datumWaarneming, vogel1, SoortWaarneming.VogelAanwezig, 50));
         telgebied.addBezoek(new Bezoek(1, datumWaarneming, datumWaarneming, telgebied, vogelteller, waarnemingen));
 
         assertEquals(0, telgebied.BerekenAantalBroedparen(vogel2));
