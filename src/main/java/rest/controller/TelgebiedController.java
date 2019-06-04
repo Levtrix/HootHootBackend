@@ -35,7 +35,7 @@ public class TelgebiedController {
         return telgebiedContainerService.getTelgebieden();
     }
 
-    @PostMapping(value = "/hoothoot/telgebieden/{id}", headers = "Accept=application/json")
+    @PostMapping(value = "/hoothoot/telgebieden", headers = "Accept=application/json")
     public ResponseEntity<Void> createTelgebied(@RequestBody Telgebied telgebied, UriComponentsBuilder ucBuilder) {
         System.out.println("Creating Telgebied " + telgebied.getNaam());
         telgebiedContainerService.saveTelgebied(telgebied);

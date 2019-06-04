@@ -1,6 +1,5 @@
 package models;
 
-import com.sun.javafx.UnmodifiableArrayList;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 

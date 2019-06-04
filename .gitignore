@@ -58,3 +58,5 @@ fabric.properties
 .idea/vcs.xml
 HootHootBackend.iml
 lib/
+!/.idea/encodings.xml
+target/

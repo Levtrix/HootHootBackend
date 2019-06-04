@@ -35,7 +35,7 @@ public class VogelController {
         return vogelContainerService.getVogels();
     }
 
-    @PostMapping(value = "/hoothoot/vogels/{id}", headers = "Accept=application/json")
+    @PostMapping(value = "/hoothoot/vogels", headers = "Accept=application/json")
     public ResponseEntity<Void> createVogel(@RequestBody Vogel vogel, UriComponentsBuilder ucBuilder) {
         System.out.println("Creating Vogel " + vogel.getVogelsoort());
         vogelContainerService.saveVogel(vogel);
