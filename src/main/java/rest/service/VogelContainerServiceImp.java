@@ -19,7 +19,7 @@ public class VogelContainerServiceImp implements IVogelContainerService{
 
     @Override
     public List<Vogel> getVogels() {
-        return getVogels();
+        return repo.getAllVogels();
     }
 
     @Override

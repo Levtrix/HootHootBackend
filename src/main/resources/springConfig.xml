@@ -10,9 +10,9 @@
       http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd
       http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.2.xsd">
 
-    <context:component-scan base-package="rest"></context:component-scan>
+    <context:component-scan base-package="rest"/>
     <jpa:repositories base-package="rest"
-                      entity-manager-factory-ref="entityManagerFactoryBean"></jpa:repositories>
+                      entity-manager-factory-ref="entityManagerFactoryBean"/>
     <!--        <bean id="UserServiceImpl" class="IUserServiceImpp" />-->
 
     <!--EntityManagerFactory -->
