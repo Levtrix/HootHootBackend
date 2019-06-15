@@ -26,17 +26,17 @@ public class Telgebied {
     @Fetch(FetchMode.SELECT)
     private List<Bezoek> bezoeken = new ArrayList<>();
 
-    @Column(name = "southwest_lat")
-    private int southWestLat;
+    @Column(name = "southwest_lat", precision = 10, scale = 3)
+    private double southWestLat;
 
-    @Column(name = "southwest_lng")
-    private int southWestLng;
+    @Column(name = "southwest_lng", precision = 10, scale = 3)
+    private double southWestLng;
 
-    @Column(name = "northEast_lat")
-    private int northEastLat;
+    @Column(name = "northEast_lat", precision = 10, scale = 3)
+    private double northEastLat;
 
-    @Column(name = "northEast_lng")
-    private int northEastLng;
+    @Column(name = "northEast_lng", precision = 10, scale = 3)
+    private double northEastLng;
 
     // Getters and setters
     public int getId() {
@@ -70,7 +70,7 @@ public class Telgebied {
         }
     }
 
-    public int getSouthWestLat() {
+    public double getSouthWestLat() {
         return southWestLat;
     }
 
@@ -78,7 +78,7 @@ public class Telgebied {
         this.southWestLat = southWestLat;
     }
 
-    public int getSouthWestLng() {
+    public double getSouthWestLng() {
         return southWestLng;
     }
 
@@ -86,7 +86,7 @@ public class Telgebied {
         this.southWestLng = southWestLng;
     }
 
-    public int getNorthEastLat() {
+    public double getNorthEastLat() {
         return northEastLat;
     }
 
@@ -94,7 +94,7 @@ public class Telgebied {
         this.northEastLat = northEastLat;
     }
 
-    public int getNorthEastLng() {
+    public double getNorthEastLng() {
         return northEastLng;
     }
 
@@ -108,7 +108,7 @@ public class Telgebied {
 
     }
 
-    public Telgebied(String naam, String kaart, int southWestLat, int southWestLng, int northEastLat, int northEastLng) {
+    public Telgebied(String naam, String kaart, double southWestLat, double southWestLng, double northEastLat, double northEastLng) {
         this.naam = naam;
         this.kaart = kaart;
         this.southWestLat = southWestLat;
@@ -117,7 +117,7 @@ public class Telgebied {
         this.northEastLng = northEastLng;
     }
 
-    public Telgebied(int id, String naam, String kaart, int southWestLat, int southWestLng, int northEastLat, int northEastLng) {
+    public Telgebied(int id, String naam, String kaart, double southWestLat, double southWestLng, double northEastLat, double northEastLng) {
         this.id = id;
         this.naam = naam;
         this.kaart = kaart;

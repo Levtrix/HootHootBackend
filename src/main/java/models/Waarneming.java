@@ -21,11 +21,11 @@ public class Waarneming {
     @Column(name = "soortwaarneming")
     private SoortWaarneming soortWaarneming;
 
-    @Column(name = "latitude")
-    private int lat;
+    @Column(name = "latitude", columnDefinition = "Decimal(10,3)")
+    private double lat;
 
     @Column(name = "longitude")
-    private int lng;
+    private double lng;
 
     // Getters and setters
     public int getId() {
@@ -56,7 +56,7 @@ public class Waarneming {
         this.soortWaarneming = soortWaarneming;
     }
 
-    public int getLat() {
+    public double getLat() {
         return lat;
     }
 
@@ -64,7 +64,7 @@ public class Waarneming {
         this.lat = lat;
     }
 
-    public int getLng() {
+    public double getLng() {
         return lng;
     }
 
@@ -77,7 +77,7 @@ public class Waarneming {
 
     }
 
-    public Waarneming(Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming, int lat, int lng) {
+    public Waarneming(Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming, double lat, double lng) {
         this.datumWaarneming = datumWaarneming;
         this.vogel = vogel;
         this.soortWaarneming = soortWaarneming;
@@ -85,7 +85,7 @@ public class Waarneming {
         this.lng = lng;
     }
 
-    public Waarneming(int id, Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming, int lat, int lng) {
+    public Waarneming(int id, Date datumWaarneming, Vogel vogel, SoortWaarneming soortWaarneming, double lat, double lng) {
         this.id = id;
         this.datumWaarneming = datumWaarneming;
         this.vogel = vogel;
